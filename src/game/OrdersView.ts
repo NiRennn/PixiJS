@@ -32,7 +32,7 @@ export class OrderCard extends Container {
     this.order = order;
     this.onDeliverClick = onDeliver;
 
-    const w = 185;
+    const w = 200;
     const h = 74;
 
     // Тень карточки на деревянном столе
@@ -52,7 +52,7 @@ export class OrderCard extends Container {
 
     // Подложка-кольцо аватара
     const avatarRing = new Graphics();
-    avatarRing.circle(-w / 2 + 25, -8, 17)
+    avatarRing.circle(-w / 2 + 28, -8, 17)
       .fill({ color: 0xffedd5 })
       .stroke({ width: 1.5, color: 0xfb923c });
     avatarRing.eventMode = 'none';
@@ -64,7 +64,7 @@ export class OrderCard extends Container {
       style: new TextStyle({ fontSize: 22 }),
     });
     avatarText.anchor.set(0.5);
-    avatarText.position.set(-w / 2 + 25, -8);
+    avatarText.position.set(-w / 2 + 28, -8);
     avatarText.eventMode = 'none';
     this.addChild(avatarText);
 
@@ -79,13 +79,13 @@ export class OrderCard extends Container {
       }),
     });
     nameText.anchor.set(0.5);
-    nameText.position.set(-w / 2 + 25, 17);
+    nameText.position.set(-w / 2 + 28, 17);
     nameText.eventMode = 'none';
     this.addChild(nameText);
 
     // Блюдце-подставка под запрашиваемый предмет
     const itemPlate = new Graphics();
-    itemPlate.circle(-15, 0, 23)
+    itemPlate.circle(-10, 0, 23)
       .fill({ color: 0xfcf4e8 })
       .stroke({ width: 1, color: 0xe6d4be });
     itemPlate.eventMode = 'none';
@@ -94,7 +94,7 @@ export class OrderCard extends Container {
     // Иконка запрашиваемого предмета
     this.itemSprite = new Sprite();
     this.itemSprite.anchor.set(0.5);
-    this.itemSprite.position.set(-15, 0);
+    this.itemSprite.position.set(-10, 0);
     this.itemSprite.eventMode = 'none';
     this.addChild(this.itemSprite);
 
@@ -109,13 +109,13 @@ export class OrderCard extends Container {
       }),
     });
     this.rewardText.anchor.set(0.5);
-    this.rewardText.position.set(w / 2 - 38, -14);
+    this.rewardText.position.set(w / 2 - 40, -14);
     this.rewardText.eventMode = 'none';
     this.addChild(this.rewardText);
 
     // Кнопка "Сдать" — оборачиваем в единый интерактивный Container
     this.deliverBtn = new Container();
-    this.deliverBtn.position.set(w / 2 - 38, 14);
+    this.deliverBtn.position.set(w / 2 - 40, 14);
     this.deliverBtn.eventMode = 'static';
     this.deliverBtn.cursor = 'pointer';
     this.deliverBtn.hitArea = new Rectangle(-35, -15, 70, 30);
@@ -204,7 +204,7 @@ export class OrderCard extends Container {
   }
 
   public setDropHighlight(active: boolean, isMatch: boolean = false) {
-    const w = 185;
+    const w = 200;
     const h = 74;
     this.bg.clear();
     if (active) {
@@ -298,7 +298,7 @@ export class OrdersView extends Container {
   }
 
   private renderCards() {
-    const spacing = 195;
+    const spacing = 210;
     const startX = -spacing / 2;
 
     this.currentOrders.forEach((order, index) => {
@@ -337,7 +337,7 @@ export class OrdersView extends Container {
         this.removeChild(oldCard);
         oldCard.destroy();
 
-        const spacing = 195;
+        const spacing = 210;
         const startX = -spacing / 2;
 
         const newCard = new OrderCard(newOrder, (ord, cardInstance) => {
@@ -379,7 +379,7 @@ export class OrdersView extends Container {
     for (const card of this.cards) {
       if (card.destroyed) continue;
       const local = card.toLocal({ x: gx, y: gy });
-      if (Math.abs(local.x) <= 100 && Math.abs(local.y) <= 45) {
+      if (Math.abs(local.x) <= 108 && Math.abs(local.y) <= 45) {
         return {
           order: card.order,
           card,

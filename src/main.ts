@@ -129,7 +129,7 @@ async function bootstrap() {
     style: uiTextStyle,
   });
   scoreText.anchor.set(0, 0.5);
-  scoreText.position.set(-192, 0);
+  scoreText.position.set(-190, 0);
   scoreText.eventMode = 'none';
   topUi.addChild(scoreText);
 
@@ -138,7 +138,7 @@ async function bootstrap() {
     style: uiTextStyle,
   });
   energyText.anchor.set(0, 0.5);
-  energyText.position.set(-100, 0);
+  energyText.position.set(-95, 0);
   energyText.eventMode = 'none';
   topUi.addChild(energyText);
 
@@ -177,7 +177,7 @@ async function bootstrap() {
 
   // Кнопка сброса (🔄)
   const resetBtn = new Container();
-  resetBtn.position.set(162, 0);
+  resetBtn.position.set(172, 0);
   resetBtn.eventMode = 'static';
   resetBtn.cursor = 'pointer';
   resetBtn.hitArea = new Rectangle(-18, -18, 36, 36);
