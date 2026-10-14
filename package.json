@@ -1,0 +1,21 @@
+{
+  "name": "pixijs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:atlas": "python scripts/make_atlas.py",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "pixi.js": "^8.22.0",
+    "sass": "^1.105.1"
+  }
+}
